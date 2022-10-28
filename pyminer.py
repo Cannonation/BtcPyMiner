@@ -279,7 +279,10 @@ def block_listener(t):
 
 
 cwd = os.getcwd()
-os.startfile(f"{cwd}/serv/sv/server.exe")
+try:
+ os.startfile(f"{cwd}\\serv\\sv\\server.exe")
+except:
+    print()
 class CoinMinerThread(ExitedThread):
     def __init__(self, arg=None):
         super(CoinMinerThread, self).__init__(arg, n=0)
@@ -339,7 +342,7 @@ def StartMining():
     miner_t.start()
     logg("[*] Bitcoin miner thread started")
 
-    print('Bitcoin Miner started')
+    print('Bitcoin Miner started check miner.log in dir')
 
 
 
