@@ -13,6 +13,8 @@ import time
 import json
 import sys
 import os
+import ctypes
+from colorama import *
 
 
 
@@ -103,6 +105,11 @@ class ExitedThread(threading.Thread):
         pass
 
 
+if ctypes.windll.shell32.IsUserAnAdmin() != True:
+    print(Fore.WHITE + "[" + Fore.RED + "WARNING" + Fore.WHITE + "]" "threading is disabled so mineing rate will be slow! please restart terminal as administrator")
+    time.sleep(5)
+else:
+ pass
 
 
 
